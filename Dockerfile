@@ -1,4 +1,4 @@
-FROM node:20 as builder-frontend
+FROM node:20 as builder-front
 
 # Set working directory
 WORKDIR /app
@@ -7,12 +7,12 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 # Copy project folder
-COPY frontend /app
+COPY front /app
 
 # Build Angular project
 RUN pnpm i && pnpm run build
 
-FROM node:20 as builder-backend
+FROM node:20 as builder-back
 
 # Set working directory
 WORKDIR /app
@@ -21,9 +21,9 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 # Copy project folder
-COPY backend /app
+COPY back /app
 
-# Build backend project
+# Build back project
 RUN pnpm i && pnpm run build
 
 FROM node:20
@@ -33,11 +33,11 @@ RUN mkdir -p /var/log/supervisor
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Copy projects
-COPY --from=builder-frontend /app/dist/tp2/browser/ /var/www/html
-# COPY --from=builder-backend /app/dist /app/backend
+COPY --from=builder-front /app/dist/tp2/browser/ /var/www/html
+# COPY --from=builder-back /app/dist /app/back
 
 # Set working directory
-WORKDIR /app/backend
+WORKDIR /app/back
 # Install dependencies
 #RUN npm install --production
 
