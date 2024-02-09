@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 import { HeaderComponent } from './header/header.component';
 
@@ -7,7 +9,12 @@ import { HeaderComponent } from './header/header.component';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [HeaderComponent]
+  imports: [
+	CommonModule,
+	RouterOutlet,
+
+	HeaderComponent
+	]
 })
 export class AppComponent {
   title = 'TP2';

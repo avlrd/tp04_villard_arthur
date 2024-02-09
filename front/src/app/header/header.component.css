@@ -32,6 +32,6 @@ nav {
 	align-items: center;
 }
 
-nav span {
+nav .link {
 	margin-right: 1rem;
 }
