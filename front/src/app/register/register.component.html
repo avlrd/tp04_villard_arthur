@@ -1,0 +1,24 @@
+<div class="wrapper">
+	@if (true) {
+		<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+			<div class="name-wrapper">
+				<input type="text" formControlName="FirstName" placeholder="First name"/>
+				<input type="text" formControlName="LastName" placeholder="Last name"/>
+			</div>
+			<input type="text" formControlName="Address" placeholder="Address"/>
+			<div class="zipcity-wrapper">
+				<input type="text" formControlName="Zip" placeholder="Zip"/>
+				<input type="text" formControlName="City" placeholder="City"/>
+			</div>
+			<input type="text" formControlName="Country" placeholder="Country"/>
+			<input type="text" formControlName="Phone" placeholder="Phone"/>
+			<input type="text" formControlName="Email" placeholder="Email"/>
+			<input type="text" formControlName="Login" placeholder="Login"/>
+			<input [type]="showPassword ? 'text' : 'password'" formControlName="Password" placeholder="Password"/>
+			<input [type]="showConfirmPassword ? 'text' : 'password'" formControlName="ConfirmPassword" placeholder="Confirm password"/>
+			<input type="checkbox" onclick="showPassword = true">
+			<button type="submit">Register</button>
+		</form>
+	}
+	
+</div>

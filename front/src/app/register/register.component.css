@@ -1,0 +1,32 @@
+.wrapper {
+	width: 600px;
+	margin: auto;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+form div {
+	display: flex;
+	justify-content: space-between;
+}
+
+input {
+	border: 2px solid rgb(34, 40, 49);
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	margin-top: 1rem;
+}
+
+button {
+	margin: 1rem auto 0 auto;
+	border: none;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	background-color: rgb(34, 40, 49);
+	color: rgb(238, 238, 238);
+	width: 50%;
+}
