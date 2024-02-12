@@ -5,7 +5,7 @@ import { HomeComponent } from "./home/home.component";
 
 export const routes: Routes = [
 	{ path: '', component: HomeComponent },
-	{ path: 'Registration', component: RegistrationFormComponent},
+	{ path: 'Register', component: RegistrationFormComponent},
 	{ path: '**', redirectTo: 'home' }
 ];
 
