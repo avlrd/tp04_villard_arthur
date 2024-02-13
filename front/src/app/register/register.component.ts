@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'app-register',
@@ -9,36 +9,32 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 	imports: [ReactiveFormsModule]
 })
 export class RegisterComponent {
-	showPassword = false;
-	showConfirmPassword = false;
+	public showPassword: boolean = false;
+	public showConfirmPassword: boolean = false;
+	public submitted: boolean = false;
 	registerForm: FormGroup;
 
 	constructor(private fb: FormBuilder) {
 		this.registerForm = this.fb.group({
-			FirstName: [''],
-			LastName: [''],
-			Adress: [''],
-			Zip: [''],
-			City: [''],
-			Country: [''],
-			Phone: [''],
-			Email: [''],
-			Gender: [''],
-			Login: [''],
-			Password: ['']
+			FirstName: ['', Validators.required],
+			LastName: ['', Validators.required],
+			Address: [''],
+			Zip: ['', Validators.required],
+			City: ['', Validators.required],
+			Country: ['', Validators.required],
+			Phone: ['', Validators.pattern('^[0-9]*$')],
+			Email: ['', Validators.required],
+			Gender: ['', Validators.required],
+			Login: ['', Validators.required],
+			Password: ['', [Validators.required, Validators.minLength(8)]],
+			ConfirmPassword: ['', Validators.required]
 		});
 	}
 
 	onSubmit(): void {
-
-	}
-
-	toggleVisibility(input: HTMLInputElement): void {
-		if(input.type === 'password') {
-			input.type = 'text';
-		}
-		else {
-			input.type = 'password';
+		if (this.registerForm.valid) {
+			this.submitted = true;
+			console.log(this.registerForm.value);
 		}
 	}
 }

@@ -1,6 +1,7 @@
 .wrapper {
 	width: 600px;
 	margin: auto;
+	padding: 2rem 0;
 }
 
 form {
@@ -9,16 +10,26 @@ form {
 	width: 100%;
 }
 
-form div {
+.single-input-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.double-input-wrapper {
 	display: flex;
 	justify-content: space-between;
+}
+
+.double-input-wrapper > div {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
 }
 
 input {
 	border: 2px solid rgb(34, 40, 49);
 	border-radius: 0.5rem;
 	padding: 0.5rem;
-	margin-top: 1rem;
 }
 
 button {
