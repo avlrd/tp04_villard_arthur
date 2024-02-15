@@ -4,58 +4,69 @@
 			<h1>Here are the information you have entered:</h1>
 			<p>First name: {{registerForm.value.FirstName}}</p>
 			<p>Last name: {{registerForm.value.LastName}}</p>
+			<p>Phone: {{registerForm.value.Phone}}</p>
+			<p>Email: {{registerForm.value.Email}}</p>
 			<p>Address: {{registerForm.value.Address}}</p>
 			<p>Zip: {{registerForm.value.Zip}}</p>
 			<p>City: {{registerForm.value.City}}</p>
 			<p>Country: {{registerForm.value.Country}}</p>
-			<p>Phone: {{registerForm.value.Phone}}</p>
-			<p>Email: {{registerForm.value.Email}}</p>
 		</div>
 	} @else {
 		<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 			<div class="double-input-wrapper">
 				<div class="first-name">
-					<label for="">First name: </label>
+					<label id="FirstNameLabel">First name: </label>
 					<input type="text" formControlName="FirstName" placeholder="First name"/>
 				</div>
 				<div class="last-name">
-					<label for="">Last name: </label>
+					<label id="LastNameLabel">Last name: </label>
 					<input type="text" formControlName="LastName" placeholder="Last name"/>
 				</div>
 			</div>
+			<div class="double-input-wrapper">
+				<div class="gender">
+					<label id="GenderLabel">Gender: </label>
+					<select formControlName="Gender">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="Other">Other</option>
+						<option value="Prefer not to say">Prefer not to say</option>
+					</select>
+				</div>
+				<div class="phone">
+					<label id="PhoneLabel">Phone: </label>
+					<input type="text" formControlName="Phone" placeholder="Phone"/>
+				</div>
+			</div>
 			<div class="single-input-wrapper">
-				<label for="">Address: </label>
+				<label id="AddressLabel">Address: </label>
 				<input type="text" formControlName="Address" placeholder="Address"/>
 			</div>
 			<div class="double-input-wrapper">
 				<div class="zip">
-					<label for="">Zip/Post code: </label>
+					<label id="ZipLabel">Zip/Post code: </label>
 					<input type="text" formControlName="Zip" placeholder="Zip"/>
 				</div>
 				<div class="city">
-					<label for="">City: </label>
+					<label id="CityLabel">City: </label>
 					<input type="text" formControlName="City" placeholder="City"/>
 				</div>
 			</div>
 			<div class="single-input-wrapper">
-				<label for="">Phone: </label>
-				<input type="text" formControlName="Phone" placeholder="Phone"/>
-			</div>
-			<div class="single-input-wrapper">
-				<label for="">Country: </label>
+				<label id="CountryLabel">Country: </label>
 				<input type="text" formControlName="Country" placeholder="Country"/>
 			</div>
 			<div class="single-input-wrapper">
-				<label for="">Email: </label>
+				<label id="EmailLabel">Email: </label>
 				<input type="text" formControlName="Email" placeholder="Email"/>
 			</div>
 			<div class="single-input-wrapper">
-				<label for="">Login: </label>
+				<label id="LoginLabel">Login: </label>
 				<input type="text" formControlName="Login" placeholder="Login"/>
 			</div>
 			<div class="double-input-wrapper">
 				<div class="pwd">
-					<label for="">Password: </label>
+					<label id="PasswordLabel">Password: </label>
 					<input [type]="showPassword ? 'text' : 'password'" formControlName="Password" placeholder="Password"/>
 					@if (showPassword) {
 						<i class="fas fa-eye-slash" (click)="showPassword = !showPassword"></i>
@@ -64,7 +75,7 @@
 					}
 				</div>
 				<div class="confpwd">
-					<label for="">Confirm password: </label>
+					<label id="ConfirmPasswordLabel">Confirm password: </label>
 					<input [type]="showConfirmPassword ? 'text' : 'password'" formControlName="ConfirmPassword" placeholder="Confirm password"/>
 					@if (showConfirmPassword) {
 						<i class="fas fa-eye-slash" (click)="showConfirmPassword = !showConfirmPassword"></i>

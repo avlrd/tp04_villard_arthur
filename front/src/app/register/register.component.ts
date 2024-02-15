@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'app-register',
@@ -22,12 +22,26 @@ export class RegisterComponent {
 			Zip: ['', Validators.required],
 			City: ['', Validators.required],
 			Country: ['', Validators.required],
-			Phone: ['', Validators.pattern('^[0-9]*$')],
-			Email: ['', Validators.required],
-			Gender: ['', Validators.required],
-			Login: ['', Validators.required],
-			Password: ['', [Validators.required, Validators.minLength(8)]],
-			ConfirmPassword: ['', Validators.required]
+			Phone: ['', Validators.pattern('^/d+$')],
+			Email: [''],
+			Gender: [''],
+			Login: [''],
+			Password: [''],
+			ConfirmPassword: ['']
+		});
+
+		for(let control: AbstractControl in this.registerForm.controls) {
+			const validator = control.validator({} as any);
+
+		
+		Object.keys(this.registerForm.controls).forEach((key) => {
+			const control = this.registerForm.get(key);
+			if (control?.validator) {
+				const validators = control.validator({} as any);
+				if (validators?.['required']) {
+					document.getElementById(key + 'Label')!.innerHTML += '<span style="color: red;">*</span>';
+				}
+			}
 		});
 	}
 
