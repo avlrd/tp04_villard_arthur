@@ -1,0 +1,81 @@
+<div class="wrapper">
+	@if (this.submitted) {
+		<div class="summary">
+			<h1>Summary:</h1>
+
+			<p>First name: {{registerForm.value.FirstName}}</p>
+			<p>Last name: {{registerForm.value.LastName}}</p>
+			<p>Gender: {{registerForm.value.Gender}}</p>
+			@if (registerForm.value.Phone) {
+				<p>Phone: {{registerForm.value.Phone}}</p>
+			}
+			<p>Email: {{registerForm.value.Email}}</p>
+		</div>
+	} @else {
+		<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+			<div class="double-input-wrapper">
+				<div class="first-name">
+					<label>First name: </label>
+					<input type="text" formControlName="FirstName"/>
+				</div>
+				<div class="last-name">
+					<label>Last name: </label>
+					<input type="text" formControlName="LastName"/>
+				</div>
+			</div>
+			<div class="double-input-wrapper">
+				<div class="gender">
+					<label>Gender:</label>
+					<select formControlName="Gender">
+						<option value="" disabled selected></option>
+						<option>Male</option>
+						<option>Female</option>
+						<option>Other</option>
+						<option>Prefer not to say</option>
+					</select>
+				</div>
+				<div class="phone">
+					<label>Phone:</label>
+					<input type="text" formControlName="Phone"/>
+				</div>
+			</div>
+			<div class="single-input-wrapper">
+				<label>Email:</label>
+				<input type="text" formControlName="Email"/>
+				@if (submitted && f['Email'].errors) {
+					<div class="form-error-text">Invalid email address</div>
+				}
+			</div>
+			<div class="single-input-wrapper">
+				<label>Login:</label>
+				<input type="text" formControlName="Login"/>
+			</div>
+			<div class="double-input-wrapper">
+				<div class="pwd">
+					<label>Password:</label>
+					<input [type]="showPassword ? 'text' : 'password'" formControlName="Password"/>
+					@if (showPassword) {
+						<i class="fas fa-eye-slash" (click)="showPassword = !showPassword"></i>
+					} @else {
+						<i class="fas fa-eye" (click)="showPassword = !showPassword"></i>
+					}
+				</div>
+				<div class="confpwd">
+					<label>Confirm password:</label>
+					<input [type]="showConfirmPassword ? 'text' : 'password'" formControlName="ConfirmPassword"/>
+					@if (showConfirmPassword) {
+						<i class="fas fa-eye-slash" (click)="showConfirmPassword = !showConfirmPassword"></i>
+					} @else {
+						<i class="fas fa-eye" (click)="showConfirmPassword = !showConfirmPassword"></i>
+					}
+				</div>
+			</div>
+
+			@if (submitted && registerForm.errors) {
+				<div class="form-error-text">Please fill in all required fields</div>
+			}
+
+			<button type="submit">Register</button>
+		</form>
+	}
+</div>
