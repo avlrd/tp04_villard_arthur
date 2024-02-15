@@ -10,6 +10,11 @@ form {
 	width: 100%;
 }
 
+form > div {
+	width: 75%;
+	margin: 0.5rem auto;
+}
+
 .single-input-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -23,11 +28,15 @@ form {
 .double-input-wrapper > div {
 	display: flex;
 	flex-direction: column;
-	width: 50%;
+	width: 45%;
+}
+
+label {
+	margin-bottom: 0.25rem;
 }
 
 input {
-	border: 2px solid rgb(34, 40, 49);
+	border: 2px solid rgb(0, 173, 181);
 	border-radius: 0.5rem;
 	padding: 0.5rem;
 }
@@ -37,7 +46,57 @@ button {
 	border: none;
 	border-radius: 0.5rem;
 	padding: 0.5rem;
-	background-color: rgb(34, 40, 49);
+	background-color: rgb(0, 173, 181);
 	color: rgb(238, 238, 238);
+	font-weight: bold;
 	width: 50%;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: rgb(57, 62, 70);
+	color: rgb(238, 238, 238);
+}
+
+.pwd, .confpwd {
+	position: relative;
+}
+
+div > i {
+	position: absolute;
+	right: 0.5rem;
+	top: 2rem;
+}
+
+.summary {
+	width: 75%;
+	margin: 1rem auto;
+	padding: 1rem;
+	border: 2px solid rgb(0, 173, 181);
+	border-radius: 0.5rem;
+	background-color: rgb(238, 238, 238);
+
+}
+
+@media screen and (max-width: 600px){
+	.wrapper {
+		width: 100%;
+	}
+
+	form > div {
+		width: 90%;
+		margin: auto;
+	}
+
+	.double-input-wrapper {
+		flex-direction: column;
+	}
+
+	.double-input-wrapper > div {
+		width: 100%;
+	}
+
+	.pwd, .confpwd {
+		position: relative;
+	}
 }

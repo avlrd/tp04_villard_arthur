@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, NonNullableFormBuilder, ReactiveFormsModule, ValidatorFn, Validators,  AbstractControl } from '@angular/forms';
 
 @Component({
 	selector: 'app-register',
@@ -14,41 +14,47 @@ export class RegisterComponent {
 	public submitted: boolean = false;
 	registerForm: FormGroup;
 
-	constructor(private fb: FormBuilder) {
+	constructor(private fb: NonNullableFormBuilder) {
 		this.registerForm = this.fb.group({
 			FirstName: ['', Validators.required],
 			LastName: ['', Validators.required],
-			Address: [''],
-			Zip: ['', Validators.required],
-			City: ['', Validators.required],
-			Country: ['', Validators.required],
-			Phone: ['', Validators.pattern('^/d+$')],
-			Email: [''],
-			Gender: [''],
-			Login: [''],
-			Password: [''],
-			ConfirmPassword: ['']
+			Gender: ['', Validators.required],
+			Phone: ['', Validators.pattern("^[0-9]*$")],
+			Email: ['', [Validators.required, Validators.email]],
+			Login: ['', Validators.required],
+			Password: ['', [Validators.required, Validators.minLength(8)]],
+			ConfirmPassword: ['', [Validators.required, Validators.minLength(8)]]
+		},
+		{
+			validators: this.MustMatch('Password', 'ConfirmPassword')
 		});
+	}
 
-		for(let control: AbstractControl in this.registerForm.controls) {
-			const validator = control.validator({} as any);
+	get f() { return this.registerForm.controls; }
 
-		
-		Object.keys(this.registerForm.controls).forEach((key) => {
-			const control = this.registerForm.get(key);
-			if (control?.validator) {
-				const validators = control.validator({} as any);
-				if (validators?.['required']) {
-					document.getElementById(key + 'Label')!.innerHTML += '<span style="color: red;">*</span>';
-				}
+	MustMatch(pwd: string, confpwd: string): ValidatorFn {
+		return (control: AbstractControl): ValidatorFn | null => {
+			const password = control.get(pwd);
+			const confirmPassword = control.get(confpwd);
+			if (password?.value !== confirmPassword?.value) {
+				confirmPassword!.setErrors({ mustMatch: true });
 			}
-		});
+			else {
+				confirmPassword!.setErrors(null);
+			}
+			return null;
+		}
 	}
 
 	onSubmit(): void {
 		if (this.registerForm.valid) {
 			this.submitted = true;
 			console.log(this.registerForm.value);
+		}
+		else {
+			console.log("Form is invalid");
+			console.log(this.registerForm.value);
+			console.log(this.registerForm.errors);
 		}
 	}
 }
