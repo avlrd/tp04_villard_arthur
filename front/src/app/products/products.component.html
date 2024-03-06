@@ -1,0 +1,21 @@
+<div class="display">
+	<div class="products">
+		@for (product of products | async; track $index) {
+			<div class="product">
+				<img src="#" alt="Not implemented yet">
+				<div class="data">
+					<div class="info">
+						<h1 class="name">{{ product.name }}</h1>
+						<h2 class="brand">{{ product.brand }}</h2>
+					</div>
+					<div class="price">
+						<strong class="value">{{ product.price }}$</strong>
+					</div>
+				</div>
+			</div>
+		}
+		@empty {
+			<span>No products found</span>
+		}
+	</div>
+</div>
