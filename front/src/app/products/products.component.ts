@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { ApiService } from '../api.service';
 import { Product, ProductStock } from '../models/product.model';
@@ -7,7 +8,8 @@ import { Product, ProductStock } from '../models/product.model';
 	selector: 'app-products',
 	standalone: true,
 	templateUrl: './products.component.html',
-	styleUrls: ['./products.component.css']
+	styleUrls: ['./products.component.css'],
+	imports: [AsyncPipe]
 })
 export class ProductsComponent implements OnInit {
 	declare products: Observable<Array<Product>>;
