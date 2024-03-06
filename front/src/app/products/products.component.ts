@@ -9,7 +9,8 @@ import { Product, ProductStock } from '../models/product.model';
 	standalone: true,
 	templateUrl: './products.component.html',
 	styleUrls: ['./products.component.css'],
-	imports: [AsyncPipe]
+	imports: [AsyncPipe],
+	providers: [ApiService]
 })
 export class ProductsComponent implements OnInit {
 	declare products: Observable<Array<Product>>;
