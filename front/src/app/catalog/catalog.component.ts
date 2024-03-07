@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProductsComponent } from '../products/products.component';
 import { SearchEngineComponent } from '../search-engine/search-engine.component';
 
@@ -10,4 +10,9 @@ import { SearchEngineComponent } from '../search-engine/search-engine.component'
 	imports: [ProductsComponent, SearchEngineComponent]
 })
 export class CatalogComponent {
+	@Input() filter: string | null = null;
+
+	protected updateCatalog(filter: string): void {
+		this.filter = filter; //continuer ici
+	}
 }
