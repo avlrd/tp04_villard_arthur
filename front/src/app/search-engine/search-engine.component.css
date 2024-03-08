@@ -24,6 +24,14 @@
 	outline: none;
 }
 
+#filters-button {
+	background-color: #f0f0f0;
+	border: 1px solid grey;
+	border-radius: 1rem;
+	padding: 0.25rem 0.5rem;
+	margin-left: 2vw;
+}
+
 #reactive-info {
 	display: flex;
 	flex-direction: column;
