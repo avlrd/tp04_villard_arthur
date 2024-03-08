@@ -1,0 +1,213 @@
+{
+	"products": [
+		{
+			"name": "Tech jersey",
+			"brand": "Errea",
+			"category": {
+				"main": "Top",
+				"sub": "Tech"
+			},
+			"gender": "any",
+			"price": 25,
+			"color": ["white", "black", "blue", "red"],
+			"stock": [
+				{
+					"size": "S",
+					"quantity": 10
+				},
+				{
+					"size": "M",
+					"quantity": 20
+				},
+				{
+					"size": "L",
+					"quantity": 15
+				}
+			]
+		},
+		{
+			"name": "Cotton sport t-shirt",
+			"brand": "Errea",
+			"category": {
+				"main": "Top",
+				"sub": "T-shirt"
+			},
+			"gender": "any",
+			"price": 15,
+			"color": ["white", "black", "blue", "red"],
+			"stock": [
+				{
+					"size": "S",
+					"quantity": 10
+				},
+				{
+					"size": "M",
+					"quantity": 20
+				},
+				{
+					"size": "L",
+					"quantity": 15
+				}
+			]
+		},
+		{
+			"name": "Sleeveless jersey",
+			"brand": "Errea",
+			"category": {
+				"main": "Top",
+				"sub": "Jersey"
+			},
+			"gender": "women",
+			"price": 20,
+			"color": ["white", "red"],
+			"stock": [
+				{
+					"size": "S",
+					"quantity": 25
+				},
+				{
+					"size": "M",
+					"quantity": 15
+				},
+				{
+					"size": "L",
+					"quantity": 10
+				}
+			]
+		},
+		{
+			"name": "5\" Shorts",
+			"brand": "Errea",
+			"category": {
+				"main": "Bottom",
+				"sub": "Shorts"
+			},
+			"gender": "men",
+			"price": 20,
+			"color": ["black", "white"],
+			"stock": [
+				{
+					"size": "S",
+					"quantity": 25
+				},
+				{
+					"size": "M",
+					"quantity": 20
+				},
+				{
+					"size": "L",
+					"quantity": 20
+				}
+			]
+		},
+		{
+			"name": "Training shorts",
+			"brand": "Errea",
+			"category": {
+				"main": "Bottom",
+				"sub": "Shorts"
+			},
+			"gender": "women",
+			"price": 15,
+			"color": ["black", "white", "red", "blue", "green"],
+			"stock": [
+				{
+					"size": "S",
+					"quantity": 25
+				},
+				{
+					"size": "M",
+					"quantity": 20
+				},
+				{
+					"size": "L",
+					"quantity": 20
+				}
+			]
+		},
+		{
+			"name": "Knee pads",
+			"brand": "Errea",
+			"category": {
+				"main": "Accessories",
+				"sub": "Knee pads"
+			},
+			"gender": "any",
+			"price": 10,
+			"color": ["black"],
+			"stock": [
+				{
+					"size": "Unique",
+					"quantity": 25
+				}
+			]
+		},
+		{
+			"name": "Pro Knee pads",
+			"brand": "Errea",
+			"category": {
+				"main": "Accessories",
+				"sub": "Knee pads"
+			},
+			"gender": "any",
+			"price": 15,
+			"color": ["black", "white"],
+			"stock": [
+				{
+					"size": "Unique",
+					"quantity": 25
+				}
+			]
+		},
+		{
+			"name": "Pro kit jersey",
+			"brand": "Errea",
+			"category": {
+				"main": "Top",
+				"sub": "Jersey"
+			},
+			"gender": "men",
+			"price": 30,
+			"color": ["blue", "white"],
+			"stock": [
+				{
+					"size": "S",
+					"quantity": 25
+				},
+				{
+					"size": "M",
+					"quantity": 20
+				},
+				{
+					"size": "L",
+					"quantity": 20
+				}
+			]
+		},
+		{
+			"name": "Pro kit shorts",
+			"brand": "Errea",
+			"category": {
+				"main": "Bottom",
+				"sub": "Shorts"
+			},
+			"gender": "men",
+			"price": 25,
+			"color": ["blue", "white"],
+			"stock": [
+				{
+					"size": "S",
+					"quantity": 25
+				},
+				{
+					"size": "M",
+					"quantity": 20
+				},
+				{
+					"size": "L",
+					"quantity": 20
+				}
+			]
+		}
+	]
+}

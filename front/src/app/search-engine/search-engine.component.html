@@ -1,0 +1,25 @@
+<section id="search">
+	<form id="search-bar">
+		<input id="search-bar-field" type="text" name="search" placeholder="Search..." [ngModel]="searchInput | async" (ngModelChange)="searchInput.next($event)" required>
+		<button id="search-bar-button" (click)="Search()">Search</button>
+	</form>
+
+	<button id="filters-button" (click)="addOne()">
+		<span id="filters-label">Filters</span>
+		@if (filtersNumber !== 0) {
+			<span id="filters-number">{{ " " + filtersNumber }}</span>
+		}
+	</button>
+</section>
+<section id="reactive-info">
+@if (filtersNumber !== 0) {
+	<div id="filters-list">Works !</div>
+}
+
+@if (searchInputSave !== "" && searchInputSave !== undefined) {
+	<div id="search-message">
+		Search results for "{{ searchInputSave}}"
+	</div>
+}
+</section>
+

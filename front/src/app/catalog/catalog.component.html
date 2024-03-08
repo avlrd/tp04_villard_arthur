@@ -1,0 +1,8 @@
+<div id="content">
+	<section>
+		<app-search-engine (searchEvent)="updateCatalog($event)"></app-search-engine>
+	</section>
+	<section>
+		<app-products [filter]="filter"></app-products>
+	</section>
+</div>
