@@ -14,11 +14,15 @@ export class ApiService {
 		if (filter === null) {
 			return this.http.get<{ products: Array<Product> }>(env.backendClient)
 				.pipe(map(response => response.products));
-		} else {
+		}
+		else {
+			const filterWords = filter.split(' ');
 			return this.http.get<{ products: Array<Product> }>(env.backendClient)
 				.pipe(
 					map(response => response.products.filter(product => {
-						return product.name.toLowerCase().includes(filter.toLowerCase()) || product.brand.toLowerCase().includes(filter.toLowerCase());
+						return filterWords.every(word => {
+							return product.name.toLowerCase().includes(word.toLowerCase()) || product.brand.toLowerCase().includes(word.toLowerCase());
+						});
 					}))
 				);
 		}
