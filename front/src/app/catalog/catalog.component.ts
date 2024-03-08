@@ -10,9 +10,9 @@ import { SearchEngineComponent } from '../search-engine/search-engine.component'
 	imports: [ProductsComponent, SearchEngineComponent]
 })
 export class CatalogComponent {
-	@Input() filter: string | null = null;
+	filter: string | null = null;
 
 	protected updateCatalog(filter: string): void {
-		this.filter = filter; //continuer ici
+		this.filter = filter;
 	}
 }
