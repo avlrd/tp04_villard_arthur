@@ -1,8 +1,3 @@
-.display {
-	width: 100%;
-	padding: 2rem 0;
-}
-
 .products {
 	width: max-content;
 	display: grid;
@@ -90,4 +85,8 @@
 .product .data .price {
 	margin: 0;
 	font-size: 1.5rem;
+}
+
+#result-void {
+	grid-column: 1 / -1;
 }
