@@ -11,11 +11,20 @@ import { AsyncPipe } from '@angular/common';
 	imports: [AsyncPipe, FormsModule]
 })
 export class SearchEngineComponent {
+	filtersNumber: number = 0;
+	searchInputSave: string = '';
+
+	//test
+	addOne(): void {
+		this.filtersNumber++;
+	}
+
 	protected searchInput: BehaviorSubject<string> = new BehaviorSubject<string>('');
 	@Output() searchEvent: EventEmitter<string> = new EventEmitter<string>();
 
 	protected Search(): void {
 		var searchInput: string = (<HTMLInputElement>document.getElementById("search-bar-field")).value;
+		this.searchInputSave = searchInput;
 		console.log(searchInput);
 		this.searchEvent.emit(searchInput);
 	}
