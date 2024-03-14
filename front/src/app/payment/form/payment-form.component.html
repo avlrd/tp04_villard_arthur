@@ -1,0 +1,20 @@
+<form [formGroup]="paymentForm" (ngOnSubmit)="onSubmit()">
+	<div>
+		<input type="text" formControlName="CardHolder" placeholder="Name">
+	</div>
+	<div>
+		<input type="text" formControlName="CardNumber" placeholder="Number">
+	</div>
+	<div>
+		<div>
+			<input type="text" formControlName="ExpirationMonth" placeholder="MM">
+			/
+			<input type="text" formControlName="ExpirationYear" placeholder="YYYY">
+		</div>
+		<input type="text" formControlName="CVV" placeholder="CVV">
+	</div>
+	<div>
+		<button type="submit" [disabled]="paymentForm.invalid">Add card</button>
+	</div>
+
+</form>
