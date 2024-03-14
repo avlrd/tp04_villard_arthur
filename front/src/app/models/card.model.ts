@@ -1,11 +1,6 @@
 export type Card = {
 	name: string;
 	number: string;
-	expiryDate: CardDate;
+	expiryDate: Date;
 	cvv: string;
-}
-
-export type CardDate = {
-	year: number;
-	month: number;
 }
