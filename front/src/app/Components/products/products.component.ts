@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
-import { ApiService } from '../api.service';
-import { Product, ProductStock } from '../models/product.model';
+import { ApiService } from '../../Api/api.service';
+import { Product, ProductStock } from '../../Types/Product';
 
 @Component({
 	selector: 'app-products',

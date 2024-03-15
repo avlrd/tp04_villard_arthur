@@ -1,10 +1,10 @@
 import { Component, importProvidersFrom } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { RouterOutlet } from '@angular/router';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HttpClient } from '@angular/common/http';
+import { HeaderComponent } from './Components/Common/header/header.component';
+import { FooterComponent } from './Components/Common/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +14,9 @@ import { HttpClient } from '@angular/common/http';
   imports: [
 	CommonModule,
 	RouterOutlet,
-
 	HeaderComponent,
 	FooterComponent
 	],
   providers: [HttpClient]
 })
-export class AppComponent {
-  title = 'TP2';
-}
+export class AppComponent {}

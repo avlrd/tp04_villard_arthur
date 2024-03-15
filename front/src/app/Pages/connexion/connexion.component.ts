@@ -4,11 +4,11 @@ import { FormGroup, NonNullableFormBuilder, ReactiveFormsModule, ValidatorFn, Va
 @Component({
 	selector: 'app-register',
 	standalone: true,
-	templateUrl: './register.component.html',
-	styleUrls: ['./register.component.css'],
+	templateUrl: './connexion.component.html',
+	styleUrls: ['./connexion.component.css'],
 	imports: [ReactiveFormsModule]
 })
-export class RegisterComponent {
+export class ConnexionComponent {
 	public showPassword: boolean = false;
 	public showConfirmPassword: boolean = false;
 	public submitted: boolean = false;

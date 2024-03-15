@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ProductsComponent } from '../products/products.component';
-import { SearchEngineComponent } from '../search-engine/search-engine.component';
+import { ProductsComponent } from '../../Components/products/products.component';
+import { SearchEngineComponent } from '../../Components/search-engine/search-engine.component';
 
 @Component({
 	selector: 'app-catalog',

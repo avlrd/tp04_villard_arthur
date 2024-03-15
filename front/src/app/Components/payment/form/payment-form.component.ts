@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { AbstractControl, FormGroup, NonNullableFormBuilder, ValidatorFn, Validators } from "@angular/forms";
-import { Card } from "../../models/card.model";
+import { Card } from "../../Types/Card";
 
 @Component({
 	selector: "app-payment-form",
