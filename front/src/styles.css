@@ -24,10 +24,6 @@ app-root {
 	flex-direction: column;
 }
 
-router-outlet {
-	flex: 1;
-}
-
 a {
 	text-decoration: none;
 	color: inherit;
