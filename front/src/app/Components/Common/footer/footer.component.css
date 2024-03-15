@@ -1,5 +1,5 @@
 footer {
-	border-top: 1px solid lightgrey;
+	border-top: 1px solid var(--quaternary);
 	margin: 0 2rem;
 	height: 10vh;
 	display: flex;
@@ -9,5 +9,5 @@ footer {
 
 footer p {
 	text-align: center;
-	color: lightgray;
+	color: var(--quaternary);
 }

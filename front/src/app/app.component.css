@@ -1,12 +1,4 @@
-app-header {
-	color: var(--quaternary);
-}
-
 router-outlet {
 	flex: 1;
 	color: var(--primary);
-}
-
-app-footer {
-	color: var(--quaternary);
 }
