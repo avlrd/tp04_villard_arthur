@@ -49,7 +49,7 @@
 
 .product {
 	width: 20rem;
-	border: 1px solid lightgrey;
+	border: 1px solid var(--tertiary);
 	border-radius: 0.5rem;
 
 	display: flex;
@@ -74,17 +74,19 @@
 .product .data .name {
 	margin: 0;
 	font-size: 1.5rem;
+	color: var(--secondary);
 }
 
 .product .data .brand {
 	margin: 0;
 	font-size: 1.25rem;
-	color: grey;
+	color: var(--tertiary);
 }
 
 .product .data .price {
 	margin: 0;
 	font-size: 1.5rem;
+	color: var(--tertiary);
 }
 
 #result-void {
